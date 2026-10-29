@@ -2,12 +2,14 @@
 
 Target: r/LocalLLaMA (primary), possibly r/radeon, r/homelab. Check each sub's self-promotion rules before posting.
 
-**Title:** Reading MI50 sensors on Windows (forced Radeon VII driver): why every tool shows nothing, and a fix
+**Title:** Reading MI50 sensors on Windows (forced Radeon Pro VII driver): why every tool shows nothing, and a fix
 
 **Body:**
 
-If you run an MI50 on Windows with the Radeon VII / Pro VII driver forced onto it, you've probably noticed that
-HWiNFO-style tools and LibreHardwareMonitor show no sensors for it, while Task Manager shows a temperature.
+**TL;DR:** the MI50's sensors are readable on Windows through ADL PMLog, but only with the `atiadlxx.dll` from the MI50's own driver package, not the one in System32. Repo with notes and small probes below.
+
+If you run an MI50 on Windows with the Radeon VII / Pro VII driver forced onto it, you may have noticed that
+LibreHardwareMonitor shows no sensors for it, while Task Manager shows a temperature. (I only tested LibreHardwareMonitor; I haven't checked other tools.)
 I dug into why and found a way to read much more than just temperature.
 
 **Cause.** Windows keeps a single `atiadlxx.dll` in System32, taken from the newest AMD driver installed. In my box that is
@@ -21,8 +23,8 @@ core / SoC / memory voltage, core / memory / SoC clocks, activity, fan. Example:
 Overdrive calls still fail, so no clock/power tuning this way, monitoring only.
 
 **What I did about it.** Notes + three small read-only C# probes (no AMD DLLs included, just how to find yours):
-<REPO LINK>
-I also sent a patch to LibreHardwareMonitor that picks the right DLL per card: <PR LINK>
+https://github.com/chicco83/mi50-windows-monitoring
+I also sent a patch to LibreHardwareMonitor that picks the right DLL per card: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/pull/2597
 
 **Under load** (synthetic DirectCompute test, LHM build with my patch): core 100 %, 1687 MHz, 0.98 V, ~170 W, and hot spot went from 37 to 91 °C in about 15 s with no dedicated cooling, so I stopped it: plan cooling.
 
