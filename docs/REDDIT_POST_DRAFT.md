@@ -26,7 +26,7 @@ Overdrive calls still fail, so no clock/power tuning this way, monitoring only.
 https://github.com/chicco83/mi50-windows-monitoring
 I also sent a patch to LibreHardwareMonitor that picks the right DLL per card: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/pull/2597
 
-**Under load** (synthetic DirectCompute test, LHM build with my patch): core 100 %, 1687 MHz, 0.98 V, ~170 W, and hot spot went from 37 to 91 °C in about 15 s with no dedicated cooling, so I stopped it: plan cooling.
+**Under load** (synthetic DirectCompute test, LHM build with my patch): core 100 %, 1687 MHz, 0.98 V, ~170 W, and hot spot went from 37 to 91 °C in about 15 s with a 3D-printed shroud + fan (MakerWorld model linked in the repo), so I stopped it. Bring a strong fan.
 
 **Honest limits.** One card, one machine, original BIOS, Windows 11. Load was only a synthetic kernel for seconds, not a real AI workload;
 no multi-hour run, no 32-bit process test, and I haven't tried a system with only the MI50. If you have a different BIOS or

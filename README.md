@@ -73,8 +73,8 @@ Quick way: run [probes/Find-AdlPackageDll_v1.0.0_20261029-1200.ps1](probes/Find-
 
 ## Cooling
 
-The MI50 has no fan. In my test the junction (hot spot) went from 37 to 91 °C in about 15 s at full synthetic load (~170 W) without dedicated cooling, so plan a fan shroud/duct before using it, so plan a fan shroud/duct before using it. 3D-printable
-options I found (community designs, check dimensions against your card and case, and verify fit and noise yourself):
+The MI50 has no fan. In my test, with the first model below (printed shroud plus fan; fan model and speed not recorded), the junction (hot spot) went from 37 to 91 °C in about 15 s at full synthetic load (~170 W), so plan a fan shroud/duct with a strong fan before using it for sustained loads, so plan a fan shroud/duct before using it. 3D-printable
+options (community designs; check dimensions against your card and case, and verify fit and noise yourself). The first one is what I currently use; the other two I have not tried:
 
 - [AMD Radeon Instinct MI50 (MakerWorld)](https://makerworld.com/it/models/1443230-amd-radeon-instinct-mi50#profileId-1502520)
 - [AMD V340 / V520 / V620 / MI25 / MI50 / MI60 / MI100 / MI210 fan shroud (MakerWorld)](https://makerworld.com/it/models/2762655-amd-v340-v520-v620-mi25-mi50-mi60-mi100-mi210-fan)

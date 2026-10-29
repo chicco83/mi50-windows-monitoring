@@ -32,7 +32,7 @@ RX 9070 XT unchanged. Both `atiadlxx.dll` copies loaded in the same process with
 
 ## LibreHardwareMonitor (PR #2597 build) under load - 2026-10-29
 Load generated with `tools/gpu_stress_d3d11` (DirectCompute ALU loop on the MI50 adapter only), sampled with `tools/lhm_sensor_log`.
-Same 41 sensors in every run. The fan on this setup is NOT the card's own (card reads 0 RPM), so cooling depends on case airflow.
+Same 41 sensors in every run. Cooling during these tests: a [3D-printed fan shroud (MakerWorld)](https://makerworld.com/it/models/1443230-amd-radeon-instinct-mi50#profileId-1502520) with its own fan (fan model and speed were not recorded, and the card reads 0 RPM because the fan is not the card's own).
 
 | Sensor | Idle | ~40 % duty (40 s) | Full load (~12 s, stopped by my 90 °C guard) |
 |---|---|---|---|
@@ -50,7 +50,7 @@ Same 41 sensors in every run. The fan on this setup is NOT the card's own (card 
 
 Observations
 - Load, clocks, voltages and power track the workload as expected, so the PMLog mapping in LHM is correct under load, not only at idle.
-- Hot spot rose roughly 1.5-2 °C per second at full load and passed 90 °C within seconds: this card/setup needs real cooling (see README). It dropped back to 54 °C about 20 s after the load stopped.
+- Hot spot rose roughly 1.5-2 °C per second at full load and passed 90 °C within seconds: even with that printed shroud and fan the junction passed 90 °C within seconds at full synthetic load, so a faster fan or a better duct may be needed for sustained loads (see README). It dropped back to 54 °C about 20 s after the load stopped.
 - Memory load reads 0 % (the compute kernel only uses registers); not a sensor fault, but a memory-bandwidth workload was not tried.
 - The first runs' CSV had decimal commas (Italian locale) that shifted columns; fixed in the logger (invariant culture).
 
