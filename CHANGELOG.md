@@ -1,4 +1,7 @@
 # Changelog
+## 2026-10-29 (5)
+- README: new section "Start here: how do I get the readings" (probe / LHM / tablet). New `docs/GUIDE_LHM.md` (build LHM from the fork branch; verified from a fresh clone, 41 sensors) and `docs/GUIDE_TABLET.md` (Tab2revamp). Removed a claim about HWiNFO that I had not tested.
+
 ## 2026-10-29 (4)
 - Added MIT LICENSE (copyright holder: chicco83, the GitHub user; change if you prefer another name) and updated README.
 

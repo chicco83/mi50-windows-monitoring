@@ -6,11 +6,25 @@ Radeon VII / Radeon Pro VII driver forced onto it**, and for reading its tempera
 > Status: personal findings, one card, one machine. See [docs/RESULTS.md](docs/RESULTS.md) for exactly what was measured
 > and what was **not**. Not affiliated with AMD.
 
+## Start here: how do I actually get the readings?
+
+The values are **not** in Task Manager (temperature only) and **not** in official LibreHardwareMonitor releases yet.
+You first make the card work (see [Prerequisites](#prerequisites)), then pick one way to read it:
+
+| I want... | Use | Effort |
+|---|---|---|
+| a quick look at the raw values, nothing to install | the **probe** ([Quick start](#quick-start)): finds your card's own DLL and prints 21 sensors | 3 commands; only the .NET Framework compiler that Windows already has |
+| a normal monitoring window and a JSON endpoint | **LibreHardwareMonitor** built from my branch: [docs/GUIDE_LHM.md](docs/GUIDE_LHM.md) | `git clone` + one `dotnet build` (until the upstream PR is released) |
+| the values on a **tablet / second screen** | the **Tab2revamp** dashboard: [docs/GUIDE_TABLET.md](docs/GUIDE_TABLET.md) | LHM build + Python server + Android app |
+
+All three read the sensors through the `atiadlxx.dll` of the card's own driver package; the guides explain how.
+(I only checked Task Manager and LibreHardwareMonitor; I have not tried other monitoring tools.)
+
 ## Setup this was tested on
 
-- MI50 with its **original BIOS**, driver forced to the Radeon VII / Pro VII package (installed through "Have disk" in Device Manager).
+- MI50 with its **original BIOS**, driver forced to the Radeon Pro VII package (Device Manager → "Let me pick from a list").
 - Same PC also has a Radeon RX 9070 XT with the current Adrenalin driver. This matters (see below).
-- Windows 11 Pro 26200, .NET Framework csc for the probes (no SDK needed).
+- Windows 11 Pro 26200; the probes need only the .NET Framework csc compiler (no SDK).
 
 ## Prerequisites
 
