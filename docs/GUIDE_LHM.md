@@ -2,18 +2,23 @@
 
 Official LibreHardwareMonitor releases **do not show the MI50 yet**. The fix is in pull request
 [LibreHardwareMonitor#2597](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/pull/2597) (open at time of writing).
-Until it is merged and released you build LHM from my branch. It takes a few minutes and was verified from a clean clone (see "Verified" below).
+Until it is merged and released you can use my prebuilt unofficial build (option A, no tools needed) or build LHM from my branch yourself (option B).
 
 ## 0. Prerequisites
 Do the [Prerequisites in the README](../README.md#prerequisites) first: driver installed and bound to "AMD Radeon Pro VII".
 Check: Device Manager shows "AMD Radeon Pro VII" without a warning, and Task Manager → Performance shows the GPU temperature.
 
-## 1. Tools you need
+## 1. Option A: prebuilt download (easiest)
+1. Download `LibreHardwareMonitor-mi50-*.zip` from the [latest release](https://github.com/chicco83/mi50-windows-monitoring/releases/latest) and unzip it to a normal folder.
+2. Skip to step 3 (Run). The release page lists the SHA-256; the build is unsigned, so SmartScreen may warn. It is MPL-2.0 and the exact source commit is in `README-MI50-BUILD.txt` inside the zip.
+
+## 2. Option B: build it yourself
+Tools you need:
 - Windows 10/11 x64.
 - [.NET SDK 8 or newer](https://dotnet.microsoft.com/download) (I used 10.0.403) and Git.
 - Nothing from AMD besides the driver you already installed. The fix uses the `atiadlxx.dll` that your MI50 driver package already left in the DriverStore.
 
-## 2. Build
+Build:
 ```powershell
 git -c core.longpaths=true clone --branch amd-mi50-support https://github.com/chicco83/LibreHardwareMonitor.git
 cd LibreHardwareMonitor
@@ -53,7 +58,8 @@ temperature fallback, the same source Task Manager uses.
 
 ## Verified
 Built from a fresh shallow clone of `amd-mi50-support` on 2026-10-29 (0 errors); that build exposed the same 41 sensors on the MI50.
-Not verified: other MI50 setups, 32-bit processes, long runs. The GUI exe itself was built but I only exercised the library with my own logger tool.
+The release zip (commit 529a670) was unzipped to a new folder on 2026-10-30: the library shows the same 41 sensors there and the GUI exe starts. I have not clicked through the GUI.
+Not verified: other MI50 setups, 32-bit processes, long runs.
 
 ## When the PR is merged
-Use the official LHM release instead and skip this guide; this page will say so.
+Use the official LHM release instead and skip this guide; this page and the prebuilt release will say so.

@@ -24,7 +24,7 @@ Overdrive calls still fail, so no clock/power tuning this way, monitoring only.
 
 **What I did about it.** Notes + three small read-only C# probes (no AMD DLLs included, just how to find yours):
 https://github.com/chicco83/mi50-windows-monitoring
-The repo has a guide to see the sensors in LibreHardwareMonitor (build from my branch for now) and one for a tablet dashboard. I also sent a patch to LibreHardwareMonitor that picks the right DLL per card: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/pull/2597
+The repo has a prebuilt unofficial LibreHardwareMonitor zip with the fix (source and MPL license included, plus build-it-yourself steps) and a guide for a tablet dashboard. I also sent a patch to LibreHardwareMonitor that picks the right DLL per card: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/pull/2597
 
 **Under load** (synthetic DirectCompute test, LHM build with my patch): core 100 %, 1687 MHz, 0.98 V, ~170 W, and hot spot went from 37 to 91 °C in about 15 s with a 3D-printed shroud + fan (MakerWorld model linked in the repo), so I stopped it. Bring a strong fan.
 

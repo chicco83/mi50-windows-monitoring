@@ -14,7 +14,7 @@ You first make the card work (see [Prerequisites](#prerequisites)), then pick on
 | I want... | Use | Effort |
 |---|---|---|
 | a quick look at the raw values, nothing to install | the **probe** ([Quick start](#quick-start)): finds your card's own DLL and prints 21 sensors | 3 commands; only the .NET Framework compiler that Windows already has |
-| a normal monitoring window and a JSON endpoint | **LibreHardwareMonitor** built from my branch: [docs/GUIDE_LHM.md](docs/GUIDE_LHM.md) | `git clone` + one `dotnet build` (until the upstream PR is released) |
+| a normal monitoring window and a JSON endpoint | **LibreHardwareMonitor** built from my branch: [docs/GUIDE_LHM.md](docs/GUIDE_LHM.md) | download a zip from [Releases](https://github.com/chicco83/mi50-windows-monitoring/releases/latest) (or build it yourself) |
 | the values on a **tablet / second screen** | the **Tab2revamp** dashboard: [docs/GUIDE_TABLET.md](docs/GUIDE_TABLET.md) | LHM build + Python server + Android app |
 
 All three read the sensors through the `atiadlxx.dll` of the card's own driver package; the guides explain how.

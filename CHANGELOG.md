@@ -1,4 +1,7 @@
 # Changelog
+## 2026-10-30
+- Release `v0.1.0-lhm-mi50`: prebuilt unofficial LibreHardwareMonitor (commit 529a670, net472 x64, MPL-2.0 included, SHA-256 on the release page). Unzipped to a clean folder: 41 sensors on the MI50 and the GUI starts. README, GUIDE_LHM and GUIDE_TABLET point to it. Rollback: `gh release delete v0.1.0-lhm-mi50 --cleanup-tag`.
+
 ## 2026-10-29 (5)
 - README: new section "Start here: how do I get the readings" (probe / LHM / tablet). New `docs/GUIDE_LHM.md` (build LHM from the fork branch; verified from a fresh clone, 41 sensors) and `docs/GUIDE_TABLET.md` (Tab2revamp). Removed a claim about HWiNFO that I had not tested.
 

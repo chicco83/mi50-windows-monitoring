@@ -15,9 +15,9 @@ This guide only covers what is specific to the MI50. For the tablet itself read 
 1. **MI50 on Windows**: do the README prerequisites (driver bound to AMD Radeon Pro VII).
 2. **Get Tab2revamp**: `git clone https://github.com/chicco83/Tab2revamp`. You need Python 3.8+ and `adb` (Android platform tools) for the USB mode.
 3. **Patched LHM for the server** (until PR #2597 is released):
-   1. Build LHM from the `amd-mi50-support` branch as in the [LHM guide](GUIDE_LHM.md).
+   1. Get the patched LHM: unzip the prebuilt zip from the [latest release](https://github.com/chicco83/mi50-windows-monitoring/releases/latest) (its files are in the folder `LibreHardwareMonitor-mi50`), or build it as in the [LHM guide](GUIDE_LHM.md).
    2. Download the official LibreHardwareMonitor v0.9.6 release and unzip it to `Tab2revamp\windows\lhm\LibreHardwareMonitor_v0.9.6-mi50\`.
-   3. Overwrite in that folder these four files with the ones from your build's `bin\Release\x64\net472\`:
+   3. Overwrite in that folder these four files with the ones from the release zip (or, if you built it yourself, from `bin\Release\x64\net472\`):
       `LibreHardwareMonitorLib.dll`, `BlackSharp.Core.dll`, `DiskInfoToolkit.dll`, `RAMSPDToolkit-NDD.dll`.
    4. From Git Bash in the Tab2revamp folder: `bash windows/agent/sensors/build_tab2sensors_v0.2.0_20261028-1200.sh` (builds `Tab2Sensors.exe` next to those DLLs).
       The server uses the highest `LibreHardwareMonitor_v*` folder name, so `-mi50` wins over `v0.9.6`.
