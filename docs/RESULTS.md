@@ -60,7 +60,7 @@ ADLX did **not** enumerate the MI50 with the System32 runtime. ADLX 1.1.0.56 fro
 
 ## NOT verified
 - A **real AI workload** (llama.cpp etc.) and memory-bandwidth-heavy loads; only a synthetic ALU kernel was used. Sustained full load was never run (stopped at 90 °C hot spot).
-- Long-run stability (hours) with both DLLs loaded (longest run: ~2.5 min of sampling).
+- Logged long-run data: the author reports (2026-11-17) that the card was later run under load and for extended periods with the patched LHM and both DLLs loaded, with no problems, but those runs were not logged here (the longest logged run is ~2.5 min of sampling).
 - 32-bit processes (`atiadlxy.dll`).
 - ADLX from the driver package.
 - Other MI50 BIOSes / other driver versions / a system with only the MI50.

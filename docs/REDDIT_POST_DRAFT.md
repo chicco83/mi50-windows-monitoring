@@ -28,8 +28,8 @@ The repo has a prebuilt unofficial LibreHardwareMonitor zip with the fix (source
 
 **Under load** (synthetic DirectCompute test, LHM build with my patch): core 100 %, 1687 MHz, 0.98 V, ~170 W, and hot spot went from 37 to 91 °C in about 15 s with a 3D-printed shroud + fan (MakerWorld model linked in the repo), so I stopped it. Bring a strong fan.
 
-**Honest limits.** One card, one machine, original BIOS, Windows 11. Load was only a synthetic kernel for seconds, not a real AI workload;
-no multi-hour run, no 32-bit process test, and I haven't tried a system with only the MI50. If you have a different BIOS or
+**Honest limits.** One card, one machine, original BIOS, Windows 11. The numbers above come from a short synthetic kernel; I have since also run the card under load and for extended periods with the patched LHM and saw no problems, but I did not log those runs, so I can't give you numbers for them.
+No 32-bit process test, and I haven't tried a system with only the MI50. If you have a different BIOS or
 driver version, I'd love to hear whether the probe works for you (run `adl_pmlog_probe.exe <path to the package atiadlxx.dll>`).
 Linux still exposes more (DPM tables, power cap, V/F curve); this is about getting useful monitoring on Windows.
 

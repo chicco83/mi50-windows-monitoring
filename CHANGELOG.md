@@ -1,4 +1,7 @@
 # Changelog
+## 2026-11-17
+- Reddit draft and RESULTS: the author reports the MI50 was later tested under load and for extended periods with the patched LHM without problems; stated as reported, not logged in the repo. Still not tested: 32-bit processes. Rollback: `git revert` this commit.
+
 ## 2026-10-30
 - Release `v0.1.0-lhm-mi50`: prebuilt unofficial LibreHardwareMonitor (commit 529a670, net472 x64, MPL-2.0 included, SHA-256 on the release page). Unzipped to a clean folder: 41 sensors on the MI50 and the GUI starts. README, GUIDE_LHM and GUIDE_TABLET point to it. Rollback: `gh release delete v0.1.0-lhm-mi50 --cleanup-tag`.
 
